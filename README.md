@@ -10,10 +10,10 @@ Please follow below steps to run your analysis
 	git config --global merge.conflictstyle diff3
 	git config --global merge.tool kdiff3
 	git config --diff.tool kdiff3
-
+	
 002. CLONE GIT REPOSITORY TO ./Sources FOLDER
 	git clone <repository_link>  ./Sources
-	
+		
 003. RUN SCRIPTS IN THE ORDER OF THEIR NAMES 
 	python 001_replay_merges.py
 	python 002_extract_conflicts_data.py
@@ -24,11 +24,12 @@ Please follow below steps to run your analysis
 	python 007_revert_data.py
 	python 008_diff_content_potential_conflicts.py
 	python 009_adjacemtline_potential_conflicts.py
-
+	
 004. OUTPUT DATA FOLDER: ./data/*.txt
 	002_extract_conflicts_data.txt
 	003_list_author_merge_conflict_resolution.txt
 	004_revert_data.txt
 	006_adjacent_line_data.txt
 	009_adjacent_line_potential_data.txt
+	
   
