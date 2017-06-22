@@ -37,6 +37,7 @@ Please follow below steps to run your analysis
 	009_adjacent_line_potential_data.txt
 	
 005. INTEGRATION AND CONFLICT BASED ON RELEASE DATES
+
 	Step 1: manually run  'gawk' scripts in 'release-date.txt' to generate data files.
 	Step 2: run python <project-name>-Rd-copier.py to copy merge data to RD_output (instead of re-run again)
 	Step 3: run python <project-name>-Rd-conflict-data.py to generate conflict data to RD_data.
