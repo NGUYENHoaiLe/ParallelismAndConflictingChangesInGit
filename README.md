@@ -4,6 +4,7 @@ Parallelism and conflicting changes in Git version control systems
 Please follow below steps to run your analysis
 
 001.CONFIG GIT
+
 	git config --global user.email="your@email.com"
 	git config --global user.name ="Your name"
 	git config --global log.date iso
@@ -12,9 +13,11 @@ Please follow below steps to run your analysis
 	git config --diff.tool kdiff3
 	
 002. CLONE GIT REPOSITORY TO ./Sources FOLDER
+
 	git clone <repository_link>  ./Sources
 		
 003. RUN SCRIPTS IN THE ORDER OF THEIR NAMES 
+
 	python 001_replay_merges.py
 	python 002_extract_conflicts_data.py
 	python 003_list_author_merge_conflict_resolution.py
