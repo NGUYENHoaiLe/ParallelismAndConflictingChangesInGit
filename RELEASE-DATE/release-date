@@ -1,0 +1,322 @@
+**** Ikiwiki:
+
+***** V1.0: 29/04/2006   ,1146355199
+git log --after="2006-04-01" --before="2006-05-30"   --min-parents=2 --oneline | wc -l
+0
+ 
+***** V2.0: 30/04/2007 , 1177977599
+git log --after="2007-04-01" --before="2007-05-30"   --min-parents=2 --oneline | wc -l
+0
+
+***** V3.0: 31/12/2008   ,  1230767999 
+1230767999 +/- 604800 (1 week after/before)
+gawk '/author /{if ( $(NF-1) > (1230767999 - 604800)  && $(NF-1) <=1230767999 ) print FILENAME }' ./output*/*.txt | sort -u >>../iki-B1W-V3.0.txt
+gawk '/author /{if ( $(NF-1) > 1230767999  && $(NF-1) <=(1230767999+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../iki-A1W-V3.0.txt
+1230767999 +/- 1209600 (2 weeks)
+gawk '/author /{if ( $(NF-1) > (1230767999- 1209600)  && $(NF-1) <=1230767999 ) print FILENAME }' ./output*/*.txt | sort -u >>../iki-B2W-V3.0.txt
+gawk '/author /{if ( $(NF-1) > 1230767999  && $(NF-1) <=(1230767999+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../iki-A2W-V3.0.txt
+
+1230767999 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1230767999- 1814400)  && $(NF-1) <=1230767999 ) print FILENAME }' ./output*/*.txt | sort -u >>../iki-B3W-V3.0.txt
+gawk '/author /{if ( $(NF-1) > 1230767999  && $(NF-1) <=(1230767999+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../iki-A3W-V3.0.txt
+
+1230767999 +/- 2419200 (4 weeks)
+gawk '/author /{if ( $(NF-1) > (1230767999- 2419200)  && $(NF-1) <=1230767999 ) print FILENAME }' ./output*/*.txt | sort -u >>../iki-B4W-V3.0.txt
+gawk '/author /{if ( $(NF-1) > 1230767999  && $(NF-1) <=(1230767999+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../iki-A4W-V3.0.txt 
+1230767999 +/- 4838400 (8 weeks)
+gawk '/author /{if ( $(NF-1) > (1230767999- 4838400)  && $(NF-1) <=1230767999 ) print FILENAME }' ./output*/*.txt | sort -u >>../iki-B8W-V3.0.txt
+gawk '/author /{if ( $(NF-1) > 1230767999  && $(NF-1) <=(1230767999+ 4838400) ) print FILENAME }' ./output*/*.txt | sort -u >>../iki-A8W-V3.0.txt 
+  
+
+
+**** Samba:
+
+***** V3.2: 02/07/2008     ,1215043199
+git log --after="2008-06-02" --before="2008-08-02"   --min-parents=2 --oneline | wc -l
+Commits:1416, Merges: 48
+gawk '/author /{if ( $(NF-1) > (1215043199 - 604800)  && $(NF-1) <=1215043199 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B1W-V3.2.txt
+gawk '/author /{if ( $(NF-1) > 1215043199  && $(NF-1) <=(1215043199+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A1W-V3.2.txt
+
+gawk '/author /{if ( $(NF-1) > (1215043199- 1209600)  && $(NF-1) <=1215043199 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B2W-V3.2.txt
+gawk '/author /{if ( $(NF-1) > 1215043199  && $(NF-1) <=(1215043199+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A2W-V3.2.txt
+
+1215043199 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1215043199- 1814400)  && $(NF-1) <=1215043199 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B3W-V3.2.txt
+gawk '/author /{if ( $(NF-1) > 1215043199  && $(NF-1) <=(1215043199+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A3W-V3.2.txt
+
+
+gawk '/author /{if ( $(NF-1) > (1215043199- 2419200)  && $(NF-1) <=1215043199 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B4W-V3.2.txt
+gawk '/author /{if ( $(NF-1) > 1215043199  && $(NF-1) <=(1215043199+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A4W-V3.2.txt 
+
+gawk '/author /{if ( $(NF-1) > (1215043199- 4838400)  && $(NF-1) <=1215043199 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B8W-V3.2.txt
+gawk '/author /{if ( $(NF-1) > 1215043199  && $(NF-1) <=(1215043199+ 4838400) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A8W-V3.2.txt 
+
+
+***** V3.3: 27/01/2009  ,1233100799
+git log --after="2008-12-02" --before="2009-02-27"   --min-parents=2 --oneline | wc -l
+Commits:2515, Merges:90
+gawk '/author /{if ( $(NF-1) > (1233100799 - 604800)  && $(NF-1) <=1233100799 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B1W-V3.3.txt
+gawk '/author /{if ( $(NF-1) > 1233100799  && $(NF-1) <=(1233100799+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A1W-V3.3.txt
+
+gawk '/author /{if ( $(NF-1) > (1233100799- 1209600)  && $(NF-1) <=1233100799 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B2W-V3.3.txt
+gawk '/author /{if ( $(NF-1) > 1233100799  && $(NF-1) <=(1233100799+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A2W-V3.3.txt
+
+1233100799 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1233100799- 1814400)  && $(NF-1) <=1233100799 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B3W-V3.3.txt
+gawk '/author /{if ( $(NF-1) > 1233100799  && $(NF-1) <=(1233100799+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A3W-V3.3.txt
+
+
+gawk '/author /{if ( $(NF-1) > (1233100799- 2419200)  && $(NF-1) <=1233100799 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B4W-V3.3.txt
+gawk '/author /{if ( $(NF-1) > 1233100799  && $(NF-1) <=(1233100799+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A4W-V3.3.txt 
+
+gawk '/author /{if ( $(NF-1) > (1233100799- 4838400)  && $(NF-1) <=1233100799 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B8W-V3.3.txt
+gawk '/author /{if ( $(NF-1) > 1233100799  && $(NF-1) <=(1233100799+ 4838400) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A8W-V3.3.txt 
+  
+
+***** V3.6: 09/08/2011,   1312934399
+git log --after="2011-07-09" --before="2011-09-09"   --min-parents=2 --oneline | wc -l
+Commits:1898, Merges:34
+gawk '/author /{if ( $(NF-1) > (1312934399 - 604800)  && $(NF-1) <=1312934399 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B1W-V3.6.txt
+gawk '/author /{if ( $(NF-1) > 1312934399  && $(NF-1) <=(1312934399+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A1W-V3.6.txt
+
+gawk '/author /{if ( $(NF-1) > (1312934399- 1209600)  && $(NF-1) <=1312934399 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B2W-V3.6.txt
+gawk '/author /{if ( $(NF-1) > 1312934399  && $(NF-1) <=(1312934399+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A2W-V3.6.txt
+
+1312934399 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1312934399- 1814400)  && $(NF-1) <=1312934399 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B3W-V3.6.txt
+gawk '/author /{if ( $(NF-1) > 1312934399  && $(NF-1) <=(1312934399+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A3W-V3.6.txt
+
+
+gawk '/author /{if ( $(NF-1) > (1312934399- 2419200)  && $(NF-1) <=1312934399 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B4W-V3.6.txt
+gawk '/author /{if ( $(NF-1) > 1312934399  && $(NF-1) <=(1312934399+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A4W-V3.6.txt 
+
+gawk '/author /{if ( $(NF-1) > (1312934399- 4838400)  && $(NF-1) <=1312934399 ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-B8W-V3.6.txt
+gawk '/author /{if ( $(NF-1) > 1312934399  && $(NF-1) <=(1312934399+ 4838400) ) print FILENAME }' ./output*/*.txt | sort -u >>../samba-A8W-V3.6.txt 
+  
+
+***** V4.0: 11/12/2012
+git log --after="2012-11-11" --before="2013-01-11"   --min-parents=2 --oneline | wc -l
+Commits:649, Merges: 0
+***** V4.1: 11/10/2013
+git log --after="2013-09-11" --before="2013-11-11"   --min-parents=2 --oneline | wc -l
+Commits:801, Merges: 0
+***** V4.2: 04/03/2015
+git log --after="2015-02-04" --before="2015-04-04"   --min-parents=2 --oneline | wc -l
+Commits:927, Merges: 0
+***** V4.3: 08/09/2015
+git log --after="2015-08-08" --before="2015-10-08"   --min-parents=2 --oneline | wc -l
+Commits:298, Merges: 0
+
+
+
+**** Rails:
+
+***** V3.1: 31/08/2011 ,1314835199
+git log --after="2011-07-30" --before="2011-10-30"   --min-parents=2 --oneline | wc -l
+321
+gawk '/author /{if ( $(NF-1) > (1314835199 - 604800)  && $(NF-1) <=1314835199 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B1W-V3.1.txt
+gawk '/author /{if ( $(NF-1) > 1314835199  && $(NF-1) <=(1314835199+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A1W-V3.1.txt
+
+gawk '/author /{if ( $(NF-1) > (1314835199- 1209600)  && $(NF-1) <=1314835199 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B2W-V3.1.txt
+gawk '/author /{if ( $(NF-1) > 1314835199  && $(NF-1) <=(1314835199+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A2W-V3.1.txt
+
+1314835199 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1314835199- 1814400)  && $(NF-1) <=1314835199 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B3W-V3.1.txt
+gawk '/author /{if ( $(NF-1) > 1314835199  && $(NF-1) <=(1314835199+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A3W-V3.1.txt
+
+gawk '/author /{if ( $(NF-1) > (1314835199- 2419200)  && $(NF-1) <=1314835199 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B4W-V3.1.txt
+gawk '/author /{if ( $(NF-1) > 1314835199  && $(NF-1) <=(1314835199+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A4W-V3.1.txt 
+
+gawk '/author /{if ( $(NF-1) > (1314835199- 4838400)  && $(NF-1) <=1314835199 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B8W-V3.1.txt
+gawk '/author /{if ( $(NF-1) > 1314835199  && $(NF-1) <=(1314835199+ 4838400) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A8W-V3.1.txt 
+
+
+***** V3.2: 20/01/2012, 1327103999
+git log --after="2011-12-20" --before="2012-02-20"   --min-parents=2 --oneline | wc -l
+444
+gawk '/author /{if ( $(NF-1) > (1327103999 - 604800)  && $(NF-1) <=1327103999 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B1W-V3.2.txt
+gawk '/author /{if ( $(NF-1) > 1327103999  && $(NF-1) <=(1327103999+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A1W-V3.2.txt
+
+gawk '/author /{if ( $(NF-1) > (1327103999- 1209600)  && $(NF-1) <=1327103999 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B2W-V3.2.txt
+gawk '/author /{if ( $(NF-1) > 1327103999  && $(NF-1) <=(1327103999+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A2W-V3.2.txt
+
+1327103999 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1327103999- 1814400)  && $(NF-1) <=1327103999 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B3W-V3.2.txt
+gawk '/author /{if ( $(NF-1) > 1327103999  && $(NF-1) <=(1327103999+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A3W-V3.2.txt
+
+gawk '/author /{if ( $(NF-1) > (1327103999- 2419200)  && $(NF-1) <=1327103999 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B4W-V3.2.txt
+gawk '/author /{if ( $(NF-1) > 1327103999  && $(NF-1) <=(1327103999+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A4W-V3.2.txt 
+
+gawk '/author /{if ( $(NF-1) > (1327103999- 4838400)  && $(NF-1) <=1327103999 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B8W-V3.2.txt
+gawk '/author /{if ( $(NF-1) > 1327103999  && $(NF-1) <=(1327103999+ 4838400) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A8W-V3.2.txt 
+
+
+***** V4.0: 25/06/2013 ,1372204799
+git log --after="2013-05-25" --before="2013-07-25"   --min-parents=2 --oneline | wc -l
+339
+gawk '/author /{if ( $(NF-1) > (1372204799 - 604800)  && $(NF-1) <=1372204799 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B1W-V4.0.txt
+gawk '/author /{if ( $(NF-1) > 1372204799  && $(NF-1) <=(1372204799+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A1W-V4.0.txt
+
+gawk '/author /{if ( $(NF-1) > (1372204799- 1209600)  && $(NF-1) <=1372204799 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B2W-V4.0.txt
+gawk '/author /{if ( $(NF-1) > 1372204799  && $(NF-1) <=(1372204799+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A2W-V4.0.txt
+
+1372204799 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1372204799- 1814400)  && $(NF-1) <=1372204799 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B3W-V4.0.txt
+gawk '/author /{if ( $(NF-1) > 1372204799  && $(NF-1) <=(1372204799+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A3W-V4.0.txt
+
+
+gawk '/author /{if ( $(NF-1) > (1372204799- 2419200)  && $(NF-1) <=1372204799 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B4W-V4.0.txt
+gawk '/author /{if ( $(NF-1) > 1372204799  && $(NF-1) <=(1372204799+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A4W-V4.0.txt 
+
+gawk '/author /{if ( $(NF-1) > (1372204799- 4838400)  && $(NF-1) <=1372204799 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B8W-V4.0.txt
+gawk '/author /{if ( $(NF-1) > 1372204799  && $(NF-1) <=(1372204799+ 4838400) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A8W-V4.0.txt 
+
+
+***** V4.1: 08/04/2014, 1397001599
+git log --after="2014-03-08" --before="2014-05-08"   --min-parents=2 --oneline | wc -l
+292
+gawk '/author /{if ( $(NF-1) > (1397001599 - 604800)  && $(NF-1) <=1397001599 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B1W-V4.1.txt
+gawk '/author /{if ( $(NF-1) > 1397001599  && $(NF-1) <=(1397001599+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A1W-V4.1.txt
+
+gawk '/author /{if ( $(NF-1) > (1397001599- 1209600)  && $(NF-1) <=1397001599 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B2W-V4.1.txt
+gawk '/author /{if ( $(NF-1) > 1397001599  && $(NF-1) <=(1397001599+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A2W-V4.1.txt
+
+1397001599 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1397001599- 1814400)  && $(NF-1) <=1397001599 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B3W-V4.1.txt
+gawk '/author /{if ( $(NF-1) > 1397001599  && $(NF-1) <=(1397001599+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A3W-V4.1.txt
+
+
+gawk '/author /{if ( $(NF-1) > (1397001599- 2419200)  && $(NF-1) <=1397001599 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B4W-V4.1.txt
+gawk '/author /{if ( $(NF-1) > 1397001599  && $(NF-1) <=(1397001599+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A4W-V4.1.txt 
+
+gawk '/author /{if ( $(NF-1) > (1397001599- 4838400)  && $(NF-1) <=1397001599 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B8W-V4.1.txt
+gawk '/author /{if ( $(NF-1) > 1397001599  && $(NF-1) <=(1397001599+ 4838400) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A8W-V4.1.txt 
+
+
+***** V4.2: 20/08/2014, 1408579199
+git log --after="2014-07-20" --before="2014-09-20"   --min-parents=2 --oneline | wc -l
+369
+gawk '/author /{if ( $(NF-1) > (1408579199 - 604800)  && $(NF-1) <=1408579199 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B1W-V4.2.txt
+gawk '/author /{if ( $(NF-1) > 1408579199  && $(NF-1) <=(1408579199+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A1W-V4.2.txt
+
+gawk '/author /{if ( $(NF-1) > (1408579199- 1209600)  && $(NF-1) <=1408579199 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B2W-V4.2.txt
+gawk '/author /{if ( $(NF-1) > 1408579199  && $(NF-1) <=(1408579199+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A2W-V4.2.txt
+
+1408579199 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1408579199- 1814400)  && $(NF-1) <=1408579199 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B3W-V4.2.txt
+gawk '/author /{if ( $(NF-1) > 1408579199  && $(NF-1) <=(1408579199+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A3W-V4.2.txt
+
+gawk '/author /{if ( $(NF-1) > (1408579199- 2419200)  && $(NF-1) <=1408579199 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B4W-V4.2.txt
+gawk '/author /{if ( $(NF-1) > 1408579199  && $(NF-1) <=(1408579199+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A4W-V4.2.txt 
+
+gawk '/author /{if ( $(NF-1) > (1408579199- 4838400)  && $(NF-1) <=1408579199 ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-B8W-V4.2.txt
+gawk '/author /{if ( $(NF-1) > 1408579199  && $(NF-1) <=(1408579199+ 4838400) ) print FILENAME }' ./output*/*.txt | sort -u >>../rails-A8W-V4.2.txt 
+
+
+
+**** Linux Kernel:
+
+***** V2.6.39:  18/05/2011, 1305763199
+git log --after="2011-04-18" --before="2011-06-18"   --min-parents=2 --oneline | wc -l
+694
+gawk '/author /{if ( $(NF-1) > (1305763199 - 604800)  && $(NF-1) <=1305763199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B1W-V2.6.39.txt
+gawk '/author /{if ( $(NF-1) > 1305763199  && $(NF-1) <=(1305763199+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A1W-V2.6.39.txt
+
+gawk '/author /{if ( $(NF-1) > (1305763199- 1209600)  && $(NF-1) <=1305763199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B2W-V2.6.39.txt
+gawk '/author /{if ( $(NF-1) > 1305763199  && $(NF-1) <=(1305763199+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A2W-V2.6.39.txt
+
+1305763199 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1305763199- 1814400)  && $(NF-1) <=1305763199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B3W-V2.6.39.txt
+gawk '/author /{if ( $(NF-1) > 1305763199  && $(NF-1) <=(1305763199+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A3W-V2.6.39.txt
+
+
+gawk '/author /{if ( $(NF-1) > (1305763199- 2419200)  && $(NF-1) <=1305763199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B4W-V2.6.39.txt
+gawk '/author /{if ( $(NF-1) > 1305763199  && $(NF-1) <=(1305763199+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A4W-V2.6.39.txt 
+
+***** V3.0:     21/07/2011, 1311292799
+git log --after="2011-06-21" --before="2011-08-21"   --min-parents=2 --oneline | wc -l
+630
+gawk '/author /{if ( $(NF-1) > (1311292799 - 604800)  && $(NF-1) <=1311292799 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B1W-V3.0.txt
+gawk '/author /{if ( $(NF-1) > 1311292799  && $(NF-1) <=(1311292799+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A1W-V3.0.txt
+
+gawk '/author /{if ( $(NF-1) > (1311292799- 1209600)  && $(NF-1) <=1311292799 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B2W-V3.0.txt
+gawk '/author /{if ( $(NF-1) > 1311292799  && $(NF-1) <=(1311292799+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A2W-V3.0.txt
+
+1311292799 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1311292799- 1814400)  && $(NF-1) <=1311292799 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B3W-V3.0.txt
+gawk '/author /{if ( $(NF-1) > 1311292799  && $(NF-1) <=(1311292799+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A3W-V3.0.txt
+
+
+gawk '/author /{if ( $(NF-1) > (1311292799- 2419200)  && $(NF-1) <=1311292799 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B4W-V3.0.txt
+gawk '/author /{if ( $(NF-1) > 1311292799  && $(NF-1) <=(1311292799+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A4W-V3.0.txt
+
+***** V3.1:     24/10/2011, 1319500799
+git log --after="2011-09-24" --before="2011-11-24"   --min-parents=2 --oneline | wc -l
+588
+gawk '/author /{if ( $(NF-1) > (1319500799 - 604800)  && $(NF-1) <=1319500799 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B1W-V3.1.txt
+gawk '/author /{if ( $(NF-1) > 1319500799  && $(NF-1) <=(1319500799+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A1W-V3.1.txt
+
+gawk '/author /{if ( $(NF-1) > (1319500799- 1209600)  && $(NF-1) <=1319500799 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B2W-V3.1.txt
+gawk '/author /{if ( $(NF-1) > 1319500799  && $(NF-1) <=(1319500799+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A2W-V3.1.txt
+
+1319500799 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1319500799- 1814400)  && $(NF-1) <=1319500799 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B3W-V3.1.txt
+gawk '/author /{if ( $(NF-1) > 1319500799  && $(NF-1) <=(1319500799+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A3W-V3.1.txt
+
+gawk '/author /{if ( $(NF-1) > (1319500799- 2419200)  && $(NF-1) <=1319500799 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B4W-V3.1.txt
+gawk '/author /{if ( $(NF-1) > 1319500799  && $(NF-1) <=(1319500799+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A4W-V3.1.txt
+
+
+***** V3.19:     08/02/2015, 1425167999
+git log --after="2015-01-08" --before="2015-03-08"   --min-parents=2 --oneline | wc -l
+1044
+gawk '/author /{if ( $(NF-1) > (1425167999 - 604800)  && $(NF-1) <=1425167999 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B1W-V3.19.txt
+gawk '/author /{if ( $(NF-1) > 1425167999  && $(NF-1) <=(1425167999+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A1W-V3.19.txt
+
+gawk '/author /{if ( $(NF-1) > (1425167999- 1209600)  && $(NF-1) <=1425167999 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B2W-V3.19.txt
+gawk '/author /{if ( $(NF-1) > 1425167999  && $(NF-1) <=(1425167999+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A2W-V3.19.txt
+
+1425167999 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1425167999- 1814400)  && $(NF-1) <=1425167999 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B3W-V3.19.txt
+gawk '/author /{if ( $(NF-1) > 1425167999  && $(NF-1) <=(1425167999+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A3W-V3.19.txt
+
+gawk '/author /{if ( $(NF-1) > (1425167999- 2419200)  && $(NF-1) <=1425167999 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B4W-V3.19.txt
+gawk '/author /{if ( $(NF-1) > 1425167999  && $(NF-1) <=(1425167999+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A4W-V3.19.txt
+
+***** V4.0:     12/04/2015, 1428883199
+git log --after="2015-03-12" --before="2015-05-12"   --min-parents=2 --oneline | wc -l
+970
+
+gawk '/author /{if ( $(NF-1) > (1428883199 - 604800)  && $(NF-1) <=1428883199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B1W-V4.0.txt
+gawk '/author /{if ( $(NF-1) > 1428883199  && $(NF-1) <=(1428883199+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A1W-V4.0.txt
+
+gawk '/author /{if ( $(NF-1) > (1428883199- 1209600)  && $(NF-1) <=1428883199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B2W-V4.0.txt
+gawk '/author /{if ( $(NF-1) > 1428883199  && $(NF-1) <=(1428883199+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A2W-V4.0.txt
+
+1428883199 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1428883199- 1814400)  && $(NF-1) <=1428883199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B3W-V4.0.txt
+gawk '/author /{if ( $(NF-1) > 1428883199  && $(NF-1) <=(1428883199+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A3W-V4.0.txt
+
+
+gawk '/author /{if ( $(NF-1) > (1428883199- 2419200)  && $(NF-1) <=1428883199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B4W-V4.0.txt
+gawk '/author /{if ( $(NF-1) > 1428883199  && $(NF-1) <=(1428883199+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A4W-V4.0.txt
+
+***** V4.1:     21/06/2015, 1434931199
+git log --after="2015-05-21" --before="2015-07-21"   --min-parents=2 --oneline | wc -l
+884
+gawk '/author /{if ( $(NF-1) > (1434931199 - 604800)  && $(NF-1) <=1434931199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B1W-V4.1.txt
+gawk '/author /{if ( $(NF-1) > 1434931199  && $(NF-1) <=(1434931199+ 604800) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A1W-V4.1.txt
+
+gawk '/author /{if ( $(NF-1) > (1434931199- 1209600)  && $(NF-1) <=1434931199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B2W-V4.1.txt
+gawk '/author /{if ( $(NF-1) > 1434931199  && $(NF-1) <=(1434931199+ 1209600) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A2W-V4.1.txt
+
+1434931199 +/- 1814400 (3 weeks)
+gawk '/author /{if ( $(NF-1) > (1434931199- 1814400)  && $(NF-1) <=1434931199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B3W-V4.1.txt
+gawk '/author /{if ( $(NF-1) > 1434931199  && $(NF-1) <=(1434931199+ 1814400) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A3W-V4.1.txt
+
+gawk '/author /{if ( $(NF-1) > (1434931199- 2419200)  && $(NF-1) <=1434931199 ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-B4W-V4.1.txt
+gawk '/author /{if ( $(NF-1) > 1434931199  && $(NF-1) <=(1434931199+ 2419200) ) print FILENAME }' ./output*/*.txt | sort -u >>../linux-A4W-V4.1.txt 
+
+
+
+
