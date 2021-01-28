@@ -1,0 +1,213 @@
+Hoai-Le.NGUYEN PROJECT -*- mode: org; -*-
+#+TITLE: Data mining approach for studying group performance and behavior in collaborative editing
+#+PHD-STUDENT: Hoai-Le NGUYEN
+#+SUPERVISOR: François CHAROY (Professor Université de Lorraine)
+#+CO-SUPERVISOR: Claudia-Lavinia IGNAT (Research scientist, Inria)
+#+STARTING-DATE: 01-September-2015 
+
+#+TODO: TODO IN-PROGRESS PENDING LONG-TERM DONE
+#+TAGS: MEETING(m) READING(r) PRESENTING(p)  WORKING(w) HIGH_PRIORITY (h)
+#+CONSTANTS: 
+
+* TODO High priority					      :HIGH_PRIORITY:
+** IN-PROGRESS [#A] Recheck the result of Table 5a
+   - Number of concurrently modified 
+   - Rerun on small scenario to check the script 
+* TODO Presentation						 :PRESENTING:
+** IN-PROGRESS Presentation at PhD day  (~5 minutes)
+*** DONE Abstract:
+Collaborative editing allows a group of people to modify a shared document at the same time.It has gained in popularity with several free-services and tools designed to support collaborative editing such as: Google Drive, Dropbox, Wikipedia, Version control systems...
+Understanding group behavior and performance in collaborative editing is very important to ensure a good user experience and a better performances;specially in cases of the environments with small resources and limited costs. We use data mining  and statistical approaches to analyze the traces of collaborative editing sessions and then study group behavior and performance. These traces of collaboration can be collected from sessions of collaboration using Google Drive, Wikipedia or Version Control Systems that are already available. 
+Currently I'm analyzing concurrent modifications and conflicts on GIT, a Distributed Version Control System and compare them with the corresponding ones in Centralized Version Control Systems such as CVS and in real-time collaboration editing sessions.
+The goal is to find out how often conflicts happen , the proportion of automatically resolved conflicts and how users react to unresolved conflicts.   
+*** TODO Prepare slides
+    SCHEDULED: <2015-11-27 ven.>
+    - What is your research problem?
+    - Who is working on the same problem?
+    - What is your specific approach?
+    - What is your expected result?   
+*** TODO Present 
+    SCHEDULED: <2015-12-03 jeu.>
+    
+* LONG-TERM Reading papers					    :READING:
+** Main papers  - ref to the original-unfinished-paper: range(1-20)
+[06] J.J.Kistler and M.Satyanarayanan. Disconected operation in coda file system. ACM Transactions on Computer Systems, 10(1):3-25,1992.
+[10] D.E.Perry, H.P.Siy, and L.G. Votta. Parallel Changes in Large-Scale Software Development: An Observational Case Study. ACM Transactions on Software Engineering and Methodology, 10(3):308-377,2001.
+[11] P.Reiher, J. Heidemann, D. Ratner, G. Skinner, and G. Poperk. Resolving file conflicts in Ficus File System. In Proceedings of the Summer Usenix Conference (USTC'94), pages 183-195, 1994.
+** Related papers (starting from No.21)
+[21] C.Bird, P.C. Rigby, E.T. Barr, D.J. Hamilton, D. M. German and P. Devanbu. The Promises and Perils of Mining Git. In Proceedings of the 2009 6th IEEE International Working Conference on Mining Software Repositories (MSR'09), pages 1-10, 2009.
+[22] A.N. Mehdi, P. Urso, F. Charoy. Evaluating Software Merge Quality. International Conference on Evaluation and Assessment in Software Engineering (EASE'14),9:1-9:10, 2014.
+[23] L.Stanisic, A. Legrand and V. Danjean. An Effective Git and Org-mode based workflow for Reproducible research. ACM SIGOPS Operating Systems Review - Special Issue on Repeatability and Sharing of Experimental Artifacts archive,49(1):61-70,2015
+ 
+* LONG-TERM Weekly meeting 					    :MEETING:
+** DONE 2nd of Nov
+   SCHEDULED: <2015-11-13 ven.>
+   - Learn Org-mode and use it to keep tracking  all my current works.
+   - Continue to compare some stastical results on conflicts of GIT with the results from a paper published on 1994 [11]
+   - Prepare an abstract  for the presentation at PhD day
+** 3rd of Nov:
+   SCHEDULED: <2015-11-20 ven.>
+** 4th of Nov:   
+   SCHEDULED: <2015-11-27 ven.>
+   
+* IN-PROGRESS Git Measuring concurrent modification and conflicts   :WORKING:
+** DONE Re-generating Data using python scripts
+*** DONE Table 1: Open source projects developed using Git
+    Description:
+   - Present some details about four large open-source projects developed using Git (DVCS)
+   - Note: If a file is moved from a place to another, we count it as a new created files.
+#+NAME: Table1
+|---+-------------------+-------------------------+---------+---------+----------+---------+--------|
+|   | Project Name      | Developments            |   No of |   No of |    No of |   No of |  No of |
+|   |                   | period                  | Authors | Created | Existing | Commits | Merges |
+|   |                   |                         |         |   Files |    Files |         |        |
+|---+-------------------+-------------------------+---------+---------+----------+---------+--------|
+| ! | C2                | C3                      |      C4 |      C5 |       C6 |      C7 |     C8 |
+|---+-------------------+-------------------------+---------+---------+----------+---------+--------|
+|   | IkiWiki 3.0       | 24.11.2014 - 05.10.2015 |     983 |    4610 |     3362 |   19375 |   1037 |
+|---+-------------------+-------------------------+---------+---------+----------+---------+--------|
+|   | Rails 5.0.0.alpha | 10.03.2006 - 05.10.2015 |    3423 |   10272 |     2984 |   53625 |   9728 |
+|---+-------------------+-------------------------+---------+---------+----------+---------+--------|
+|   | Samba 3.0.x       | 04.05.1996 - 06.10.2015 |     387 |   33626 |     7582 |  100301 |   1281 |
+|---+-------------------+-------------------------+---------+---------+----------+---------+--------|
+|   | Linux-Kernel 4.x  | 17.04.2005 - 06.10.2015 |   14396 |   90173 |    51567 |  547515 |  38961 |
+|---+-------------------+-------------------------+---------+---------+----------+---------+--------|
+;;#+TBLFM: $8= remote(Table3a,@@#$3) + remote(Table3a, @@#$4)
+*** DONE Table 2:  Concurrency and conflicts on files
+    Description:
+   - Determine number of concurrently modified files and number of them that got conflicts
+#+NAME: Table2
+|---+-------------------+---------+---------------+-----------------+-------------+------------+--------------|
+|   | Project Name      |   No of |         No of |           No of |     Rate of |    Rate of |      Rate of |
+|   |                   | Created |  Concurrently |      Files with |        CMF/ |      CflF/ |        CflF/ |
+|   |                   |   Files | Modified(CMF) | Conflicts(CflF) |          CF |        CMF |           CF |
+|---+-------------------+---------+---------------+-----------------+-------------+------------+--------------|
+| ! |                   |      Cf |           CMF |            CflF | CFM/Commits |   CflF/CMF | CflF/Commits |
+|---+-------------------+---------+---------------+-----------------+-------------+------------+--------------|
+| # | IkiWiki 3.0       |    4610 |           183 |             139 |  0.03969631 | 0.75956284 |   0.03015184 |
+|---+-------------------+---------+---------------+-----------------+-------------+------------+--------------|
+| # | Rails 5.0.0.alpha |   10272 |          1402 |             424 |  0.13648754 | 0.30242511 |   0.04127726 |
+|---+-------------------+---------+---------------+-----------------+-------------+------------+--------------|
+| # | Samba 3.0.x       |   33626 |          1242 |            1124 |  0.03693570 | 0.90499195 |   0.03342651 |
+|---+-------------------+---------+---------------+-----------------+-------------+------------+--------------|
+| # | Linux-Kernel 4.x  |   90173 |         20841 |            4127 |  0.23112240 | 0.19802313 |   0.04576758 |
+|---+-------------------+---------+---------------+-----------------+-------------+------------+--------------|
+#+TBLFM: $2= '(identity remote(Table1, @@#$2))::$3 ='(identity remote(Table1, @@#$5))::$6=($4/$3);%.8f::$7=($5/$4);%.8f::$8=($5/$3);%.8f
+
+*** DONE Table 3a: Frequencies of conflicting merges
+    Description:
+    - Number of merges (simple and octopus) that lead to unresolved conflicts.
+    - Note: in a merge, many files can be in conflict.
+#+NAME: Table3a
+|---+-------------------+--------+---------+----------------+----------------+------------------+------------------|
+|   | Project Name      |  No of |   No of |          No of |          No of |            No of |            No of |
+|   |                   | Simple | Octopus |    Conflicting |    Conflicting | Conflicts in all | Conflicts in all |
+|   |                   | Merges |  Merges |  Simple Merges | Octopus Merges |    Simple Merges |   Octopus Merges |
+|---+-------------------+--------+---------+----------------+----------------+------------------+------------------|
+| ! |                   |     SM |      OM | Conflicting SM | Conflicting OM |  Conflicts of SM |   Conflict of OM |
+|---+-------------------+--------+---------+----------------+----------------+------------------+------------------|
+|   | IkiWiki 3.0       |   1037 |       0 |             78 |              0 |              203 |                0 |
+|---+-------------------+--------+---------+----------------+----------------+------------------+------------------|
+|   | Rails 5.0.0.alpha |   9728 |       0 |            422 |              0 |              775 |                0 |
+|---+-------------------+--------+---------+----------------+----------------+------------------+------------------|
+|   | Samba 3.0.x       |   1275 |       6 |            128 |              1 |             1834 |                1 |
+|---+-------------------+--------+---------+----------------+----------------+------------------+------------------|
+|   | Linux-Kernel 4.x  |  37774 |    1187 |           3486 |             65 |             6717 |              119 |
+|---+-------------------+--------+---------+----------------+----------------+------------------+------------------|
+
+*** DONE Table 3b: Frequencies of conflicting merges
+   Description:
+   - In comparing with Number of commits, number of simple resolutions.
+#+NAME: Table3b
+|---+-------------------+---------+--------+-------------+--------------+-------------+------------+------------+------------|
+|   | Project Name      |   No of |  No of |       No of |        No of |       No of |    Rate of |    Rate of |    Rate of |
+|   |                   | Commits | Merges | Conflicting | Conflicts in |      Simple |       Mer/ |   Cfl-Mer/ |        SR/ |
+|   |                   |         |        |      Merges |   all Merges | Resolutions |    Commits |        Mer |    Cfl-Mer |
+|---+-------------------+---------+--------+-------------+--------------+-------------+------------+------------+------------|
+| ! |                   | Commits |    Mer |     Cfl-Mer |   Cfl in Mer |          SR |            |            |            |
+|---+-------------------+---------+--------+-------------+--------------+-------------+------------+------------+------------|
+| # | IkiWiki 3.0       |   19375 |   1037 |          78 |          203 |           4 | 0.05352258 | 0.07521697 | 0.05128205 |
+|---+-------------------+---------+--------+-------------+--------------+-------------+------------+------------+------------|
+| # | Rails 5.0.0.alpha |   53625 |   9728 |         422 |          775 |           7 | 0.18140793 | 0.04337993 | 0.01658768 |
+|---+-------------------+---------+--------+-------------+--------------+-------------+------------+------------+------------|
+| # | Samba 3.0.x       |  100301 |   1281 |         129 |         1835 |           9 | 0.01277156 | 0.10070258 | 0.06976744 |
+|---+-------------------+---------+--------+-------------+--------------+-------------+------------+------------+------------|
+| # | Linux-Kernel 4.x  |  547515 |  38961 |        3551 |         6836 |          25 | 0.07115969 | 0.09114242 | 0.00704027 |
+|---+-------------------+---------+--------+-------------+--------------+-------------+------------+------------+------------|
+#+TBLFM: $2=  '(identity remote(Table1, @@#$2))::$3 = '(identity remote(Table1, @@#$7))::$4 = remote(Table3a,@@#$3) + remote(Table3a, @@#$4)::$5 = remote(Table3a,@@#$5) + remote(Table3a, @@#$6)::$6 = remote(Table3a,@@#$7) + remote(Table3a, @@#$8):: $8 = $4/$3;%.8f::$9 = $5/$4;%.8f:: $10 = $7/$5;%.8f
+
+*** DONE Table 4: Conflicting types
+   Description: In comparing with Ref [11] 
+   - UU1-2: Update/Update conflicts
+   - RU1-3: Remove/Update conflicts
+   - NC1-3: Name creation conflicts
+#+NAME: Table4
+|---+-------------------+---------+---------+---------+---------+---------+---------+---------+------|
+|   | Project Name      | Octopus | Content | Modify/ | Rename/ | Rename/ | Rename/ | Rename/ | Add/ |
+|   |                   | Content |         |  Delete |  Modify |  Delete |  Rename |     Add |  Add |
+|   |                   |         |         |         |         |         |         |         |      |
+|---+-------------------+---------+---------+---------+---------+---------+---------+---------+------|
+| ! |                   |     UU1 |     UU2 |     RU1 |     RU2 |     RU3 |     NC1 |     NC2 |  NC3 |
+|---+-------------------+---------+---------+---------+---------+---------+---------+---------+------|
+| # | IkiWiki 3.0       |       0 |      94 |       3 |       0 |       0 |       0 |       0 |  106 |
+|---+-------------------+---------+---------+---------+---------+---------+---------+---------+------|
+| # | Rails 5.0.0.alpha |       0 |     695 |      18 |       0 |       5 |       0 |       0 |   57 |
+|---+-------------------+---------+---------+---------+---------+---------+---------+---------+------|
+| # | Samba 3.0.x       |       1 |    1182 |     607 |       0 |      25 |       0 |       2 |   18 |
+|---+-------------------+---------+---------+---------+---------+---------+---------+---------+------|
+| # | Linux-Kernel 4.x  |      19 |    6099 |     573 |       0 |      17 |       0 |       1 |   27 |
+|---+-------------------+---------+---------+---------+---------+---------+---------+---------+------|
+#+TBLFM: $2=  '(identity remote(Table1, @@#$2))
+
+** IN-PROGRESS In Comparing to Ref [11]
+*** IN-PROGRESS Table 5a : Proportion of update-update-conflict and name-creation-conflicts
+    Description
+   - Note: Definition of "conflict" according to Ref [11]
+   - [Updates] = Number of modified-files of all commits.
+   - [NameCreation] =  Number of added-files[NameCreation1] + number of deleted-files[NameCreation2]      
+   - [UpdateCfl]: Update/Update Conflicts
+   - [NameCfl] =  Name creation conflicts
+   - [P1] = Update-Update-Conflicts / Updates           | Ref[11] 0.000035 (0.0035%)  & 1/3 could not be resolved automatically
+   - [P2] = Name-Creation-Conflicts / Name-Creations    | Ref[11] 0.00018 (0.018%)  & all led to manually resolved by humans.
+  
+#+NAME: Table5a
+|---+-------------------+----------+---------------+---------------+-----------+-----------+-------------+---------------|
+|   | Project Name      | Modified |          Name |          Name |   Update/ |      Name |  Proportion |    Proportion |
+|   |                   |    Files |      Creation |      Creation |    Update |  Creation | UpdatesCfl/ |      NameCfl/ |
+|   |                   |          |   Added Files | Deleted Files | Conflicts | Conflicts |     Updates | (Name1+Name2) |
+|---+-------------------+----------+---------------+---------------+-----------+-----------+-------------+---------------|
+| ! |                   |  Updates | NameCreation1 | NameCreation2 | UpdateCfl |   NameCfl |          P1 |            P2 |
+|---+-------------------+----------+---------------+---------------+-----------+-----------+-------------+---------------|
+| # | IkiWiki 3.0       |    25149 |         10844 |          1334 |       402 |       106 |  0.01598473 |    0.00870422 |
+|---+-------------------+----------+---------------+---------------+-----------+-----------+-------------+---------------|
+| # | Rails 5.0.0.alpha |    98614 |         11226 |          8120 |      4765 |        57 |  0.04831971 |    0.00294635 |
+|---+-------------------+----------+---------------+---------------+-----------+-----------+-------------+---------------|
+| # | Samba 3.0.x       |   235954 |         38357 |         31871 |      2809 |        20 |  0.01190486 |    0.00028479 |
+|---+-------------------+----------+---------------+---------------+-----------+-----------+-------------+---------------|
+| # | Linux-Kernel 4.x  |  1147908 |         90923 |         39416 |    140463 |        28 |  0.12236434 |    0.00021482 |
+|---+-------------------+----------+---------------+---------------+-----------+-----------+-------------+---------------|
+#+TBLFM: $2= '(identity remote(Table1, @@#$2))::$7=remote(Table4, @@#$8)+remote(Table4, @@#$9)+remote(Table4, @@#$10)::$8=$6/$3;%.8f::$9=$7/($4+$5);%.8f
+;;::$6 = remote(Table2, @@#$4) 
+
+*** IN-PROGRESS Table 5b: Proportion of unresolved conflicts over all update/update conflicts
+   No Description
+#+NAME: Table5b
+|---+-------------------+-----------+----------------+-------------|
+|   | Project Name      |   Update/ |     Unresolved |  Proportion |
+|   |                   |    Update | Update/Updated | Unresolved/ |
+|   |                   | Conflicts |      Conflicts |   UpdateCfl |
+|---+-------------------+-----------+----------------+-------------|
+| ! |                   | UpdateCfl |     UnResolved |           P |
+|---+-------------------+-----------+----------------+-------------|
+| # | IkiWiki 3.0       |       402 |             94 |  0.23383085 |
+|---+-------------------+-----------+----------------+-------------|
+| # | Rails 5.0.0.alpha |      4765 |            695 |  0.14585519 |
+|---+-------------------+-----------+----------------+-------------|
+| # | Samba 3.0.x       |      2809 |           1183 |  0.42114632 |
+|---+-------------------+-----------+----------------+-------------|
+| # | Linux-Kernel 4.x  |    140463 |           6118 |  0.04355595 |
+|---+-------------------+-----------+----------------+-------------|
+#+TBLFM: $2= '(identity remote(Table1, @@#$2))::$3= remote(Table5a,@@#$6)::$4=remote(Table4,@@#$3)+ remote(Table4,@@#$4)::$5=$4/$3;%.8f
+** TODO In Comparing to Ref [10]				    
+** TODO  Statistic analyzing					    
+
